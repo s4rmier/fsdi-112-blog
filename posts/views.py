@@ -3,7 +3,6 @@ from django.views.generic import (
     ListView,
     CreateView,
     DetailView,
-    TemplateView
 )
 from .models import Post
 

@@ -3,8 +3,12 @@
 {% block title %}{{ post.title }}{% endblock title %}
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-<h3>{{ post.subtitle }}</h3>
-<strong>Create on: {{ post.created_on }}</strong>
-<p>{{ post.body }}</p>
+<main style="
+    padding: 1rem;
+">
+    <h1>{{ post.title }}</h1>
+    <h3>{{ post.subtitle }}</h3>
+    <strong>Create on: {{ post.created_on }}</strong>
+    <p>{{ post.body }}</p>
+</main>
 {% endblock content %}

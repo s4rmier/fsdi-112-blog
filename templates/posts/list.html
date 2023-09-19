@@ -3,14 +3,31 @@
 {% block title %}Posts{% endblock title %}
 
 {% block content %}
-<h1>Posts</h1>
-<ul>
+<main style="
+    padding: 1rem;
+">
+    <h1>Posts</h1>
+    <div 
+    style="
+    display: flex;
+    width: 90%;
+    padding: 0 auto;
+    ">
     {% for post in post_list %}
-    <li>
-        <a href="{% url 'detail' post.id %}">
-            {{ post.title }}
-        </a>
-    </li>
+    <div class="card" 
+        style="
+            width: 18rem;
+            margin: 0rem .25rem;
+        ">
+        <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.subtitle }}</h6>
+        <p class="card-text">{{ post.body|truncatechars:64 }}</p>
+        <a href="{% url 'detail' post.id %}" class="card-link">Details</a>
+        </div>
+    </div>
+    <Br>
     {% endfor %}
-</ul>
+    </div>
+</main>
 {% endblock content %}
